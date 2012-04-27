@@ -1,0 +1,6 @@
+#!/bin/bash
+
+gcc -g -ansi -pedantic -Wall -Wextra luaprocessing.c \
+    -shared -fPIC -o luaprocessing.so -lm -lSDL -lGL
+#gcc -g -ansi -pedantic -Wall -Wextra luaprocessing.c \
+#    -o test -lm -llua -lSDL -lGL -DTEST
