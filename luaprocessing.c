@@ -253,7 +253,7 @@ unsigned cmwc_random(struct cmwc *cmwc)
     c = cmwc->c;
 
     tl = a * q + cmwc->c;
-    th = (a * qh + (c & 0xffff + a * ql) >> 16 + (c >> 16)) >> 16;
+    th = ((a * qh + ((c & 0xffff) + a * ql)) >> 16) + ((c >> 16) >> 16);
 
     cmwc->c = th;
     x = tl + th;
